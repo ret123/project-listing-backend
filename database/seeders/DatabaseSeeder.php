@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\Category;
+use App\Models\Listing;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +21,23 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+       
+        Category::factory()->create([
+            'name' => 'fit-out'
+        ]);
+        Category::factory()->create([
+            'name' => 'events'
+        ]);
+        Category::factory()->create([
+            'name' => 'exhibitions'
+        ]);
+        Category::factory()->create([
+            'name' => 'furniture rental'
+        ]);
+        Category::factory()->create([
+            'name' => 'tents & marquees'
+        ]);
+        Listing::factory(50)->create();
     }
 }
